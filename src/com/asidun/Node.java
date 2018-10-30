@@ -20,6 +20,11 @@ public class Node implements Comparable<Node>{
         count = 1;
     }
 
+    public Node(){
+        count = 0;
+        this.word = "";
+    }
+
     public String getWord() {
         return new String(word);
     }
@@ -67,7 +72,7 @@ public class Node implements Comparable<Node>{
 
     @Override
     public int compareTo(@NotNull Node n) {
-        return n.getCount() - count;
+        return count - n.getCount();
     }
 
     @Override

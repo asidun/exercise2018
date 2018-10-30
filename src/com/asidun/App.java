@@ -39,11 +39,17 @@ public class App {
             e.printStackTrace();
         }
 
-        LinkedHashMap<String, Node> sorted = wordMap.entrySet().stream().sorted(comparingByValue())
+        LinkedHashMap<String, Node> sortedList = wordMap.entrySet().stream().sorted(comparingByValue())
                 .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
-        PriorityQueue<Node> nodePriorityQueue = new PriorityQueue<>(sorted.values());
+        //Queue<Node> nodeSortedQueue = new ArrayDeque<>(sorted.values());
 
-        System.out.println(nodePriorityQueue);
+        System.out.println(sortedList.values());
+        Collection<Node> nodes = sortedList.values();
+
+
+
+        
+
 
     }
 }
